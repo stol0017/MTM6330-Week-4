@@ -4,12 +4,11 @@ const sassPath ='scss/**/*.scss'
 
 gulp.task('sass', function () {
   return gulp
-  .src('scss/**/*.scss')
+  .src(sassPath)
   .pipe(sass())
   .pipe(gulp.dest('css'))
 })
+
 gulp.task('default', function() {
-  gulp.watch('scss/**/*.scss',['sass'])
-
-
+  gulp.watch(sassPath, ['sass'])
 })
